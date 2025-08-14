@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background-color: #272727;
+  color: #ccc;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 30px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 8px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  margin-bottom: 15px;
+  border-bottom: 3px solid #4caf50;
+  font-size: 32px;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+.section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #37474f;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.section p {
+  margin: 10px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+a {
+  color: #4caf50;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #388e3c;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #232222;
+  z-index: 1000;
+}
+
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+#navbar li {
+  display: inline;
+}
+
+#navbar a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#navbar a:hover {
+  background-color: #13a829;
+}
+footer {
+  background-color: #232222;
+  padding: 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p,
+.footer-links {
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+}
+
+.footer-links li {
+  margin-right: 20px;
+}
+
+.social-icons a {
+  margin-right: 20px;
+}
+
+.homepage {
+  text-align: center;
+  padding: 300px 0;
+  background-image: url("2.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.homepage img {
+  display: none;
+}
+
+.homepage-content p {
+  font-size: 24px;
+  color: #f7f4f4; 
+  margin-bottom: 20px;
+}
+
+.typing-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #000; 
+  font-size: 24px;
+}
+
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-text #typed-text {
+  display: inline-block;
+  animation: typing 3s steps(25) forwards; 
+  overflow: hidden;
+  border-right: 2px solid #f0e9e9;
+  white-space: nowrap;
+}
+p {
+    font-size: 16px; /* Your initial font size */
+    transition: transform 0.3s ease; /* Smooth transition for the animation */
+  }
+  
+  p:hover {
+    transform: scale(1.1); /* Increase the size on hover */
+  }
+  /* Add this CSS code to your existing CSS file */
+#navbar a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.3s ease; /* Smooth transition effect */
+  }
+  
+  #navbar a:hover {
+    transform: scale(1.1); /* Increase size on hover */
+  }
+  

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvraj Gupta</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style/resume.css">
+
+    <style>
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .homepage img {
+            animation: slideInLeft 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        .homepage-content p {
+            animation: slideInRight 1s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 60px;
+            border-radius: 0 0 20px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        .profile-photo {
+            width: 300px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.1);
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #37474f;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .section p {
+            margin: 10px 0;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        a {
+            color: #4caf50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #388e3c;
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #4caf50;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            transform: scale(2.0);
+            color: #388e3c;
+        }
+
+        h1:hover,
+        p:hover,
+        .section p:hover {
+            color: #22ff3c;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-top: 5px solid #4caf50;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .social-icons a {
+            margin: 0 8px;
+            font-size: 20px;
+            color: #4caf50;
+        }
+
+        .social-icons a:hover {
+            color: #388e3c;
+        }
+
+        /* Light mode styles */
+        body.light-mode {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        body.light-mode .section {
+            background-color: #ffffff;
+            color: #000;
+        }
+
+        body.light-mode a {
+            color: #00796b;
+        }
+
+        body.light-mode a:hover {
+            color: #004d40;
+        }
+
+        body.light-mode footer {
+            background-color: #ddd;
+            color: #000;
+        }
+
+        /* Fade-in animation */
+        .fade-in {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            transition: all 0.6s ease-in;
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        /* Sticky navbar */
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            background-color: #000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="home" class="homepage">
+        <div class="homepage-content">
+            <p>Welcome to My Portfolio</p>
+            <div class="typing-text">
+                <span id="typed-text"></span>
+            </div>
+        </div>
+        <img src="img/profile.jpg" alt="Your Image" onerror="this.src='img/default.jpg'">
+    </div>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#header"><i class="fas fa-clipboard-list"></i> About</a></li>
+            <li><a href="#education"><i class="fas fa-book"></i> Education</a></li>
+            <li><a href="#skills"><i class="fas fa-wrench"></i> Skills</a></li>
+            <li><a href="#activities"><i class="fas fa-trophy"></i> Activities &amp; Achievements</a></li>
+            <li><a href="#contact"><i class="fas fa-address-book"></i> Contact</a></li>
+            <li><a href="#message"><i class="fas fa-comment"></i> Message</a></li>
+            <li><a href="#footer"><i class="fas fa-headset"></i> Support</a></li>
+        </ul>
+    </nav>
+
+    <header id="header">
+        <div>
+            <h1>Yuvraj Gupta</h1>
+            <p>2nd Semester College Student</p>
+            <div class="social-media">
+                <a href="https://www.instagram.com/yuvrajgupta_1209?igsh=OGQ5ZDc2ODk2ZA=="><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61551204941240&mibextid=ZbWKwL"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.linkedin.com/in/yuvraj-gupta-73b0a8293"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/Yuvraj_3436"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <img src="img/p.jpg" alt="Yuvraj Gupta's Photo" class="profile-photo">
+        <button id="modeToggle" style="margin-left: 20px;">🌙 Toggle Mode</button>
+
+    </header>
+
+    <main>
+        <section id="education" class="section">
+            <h2><i class="fas fa-book"></i> Education</h2>
+            <h3><i class="fas fa-graduation-cap"></i> <b>Bachelor Of Technology</b></h3>
+            <p>International Institute Of Information Technology Bhubaneswar, Odisha</p>
+            <p>Expected Graduation: August, 2027</p>
+            <p>GPA: To be updated</p>
+
+            <h3><i class="fas fa-school"></i> <b>High School</b></h3>
+            <p>Narayana High School, Visakhapatnam, Andhra Pradesh</p>
+            <p>Apr 2021 – March 2023</p>
+            <p>Grade: 91%</p>
+        </section>
+
+        <section id="skills" class="section">
+            <h2><i class="fas fa-wrench"></i> Skills</h2>
+            <p>Programming Languages: HTML, CSS, C</p>
+        </section>
+
+        <section id="activities" class="section">
+            <h2><i class="fas fa-trophy"></i> Activities &amp; Achievements</h2>
+            <ul>
+                <li>Member of Sports Society</li>
+                <li>Volunteered for Grand Championship</li>
+                <li>Award for Emerging Player in Cricket</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section">
+            <h2><i class="fas fa-address-book"></i> Contact</h2>
+            <p><i class="fas fa-envelope"></i> Email: yuvrajgupta1209@gmail.com</p>
+            <p><i class="fas fa-phone"></i> Phone: +91-9905696645</p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: Main Road Bhandra, Lohardaga, Jharkhand, India</p>
+        </section>
+
+        <section id="message" class="section">
+            <h2><i class="fas fa-comment"></i> Message</h2>
+            <form action="process_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required><br><br>
+
+                <label for="user-message">Message:</label><br>
+                <textarea id="user-message" name="message" rows="5" required></textarea><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Yuvraj Gupta</p>
+            <ul class="footer-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#header">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#activities">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#message">Message</a></li>
+            </ul>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/yuvrajgupta_1209"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61551204941240"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/yuvraj-gupta-73b0a8293"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://x.com/Yuvraj_3436"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        const typedTextSpan = document.getElementById('typed-text');
+        const textArray = ["Mastering the Art of Rapid Learning,", "Exploring My Passions,", "Tech Enthusiast."];
+        const typingDelay = 100;
+        const erasingDelay = 50;
+        const newTextDelay = 1000;
+        let textIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textIndex].length) {
+                typedTextSpan.textContent += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textIndex++;
+                if (textIndex >= textArray.length) textIndex = 0;
+                setTimeout(type, typingDelay);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 1000);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        const footer = document.getElementById('footer');
+        window.addEventListener('scroll', () => {
+            const footerPosition = footer.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight;
+            if (footerPosition < screenPosition) {
+                footer.style.opacity = '1';
+                footer.style.transform = 'translateY(0)';
+            }
+        });
+        // Dark/Light Mode Toggle
+        const modeToggle = document.getElementById("modeToggle");
+        modeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("light-mode");
+        });
+
+        // Scroll to Top Button
+        const scrollBtn = document.createElement("button");
+        scrollBtn.textContent = "⬆";
+        scrollBtn.id = "scrollToTop";
+        scrollBtn.style.cssText = `
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 24px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+`;
+        document.body.appendChild(scrollBtn);
+
+        window.addEventListener("scroll", () => {
+            scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+        });
+
+        scrollBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // Section Fade-in Animation
+        const sections = document.querySelectorAll(".section");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("fade-in");
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Sticky Navbar
+        const navbar = document.getElementById("navbar");
+        const sticky = navbar.offsetTop;
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        });
+
+    </script>
+</body>
+
+</html>
